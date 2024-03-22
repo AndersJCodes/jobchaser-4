@@ -40,7 +40,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <PageNav />
+      <PageNav
+        isAuthenticated={isAuthenticated}
+        handleSignOut={handleSignOut}
+      />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/signup" element={<SignUp />} />
