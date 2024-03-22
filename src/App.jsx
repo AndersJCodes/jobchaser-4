@@ -9,13 +9,16 @@ import { AuthContext } from "./context/AuthContext";
 import { useContext } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
+import SavedJobs from "./pages/SavedJobs";
 
-const authContext = useContext(AuthContext);
+function ProtectedRoute() {
+  const authContext = useContext(AuthContext);
 
-const isAuthenticated = authContext && authContext.user !== null;
-console.log("isAuthenticated", isAuthenticated);
+  const isAuthenticated = authContext && authContext.user !== null;
+  console.log("isAuthenticated", isAuthenticated);
 
-return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
+}
 
 function App() {
   const authContext = useContext(AuthContext);
@@ -42,6 +45,9 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signIn" element={<SignIn />} />
+        <Route path="/SavedJobs" element={<ProtectedRoute />}>
+          <Route path="/SavedJobs" element={<SavedJobs />} />
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

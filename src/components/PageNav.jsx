@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 
-function PageNav() {
+function PageNav({ isAuthenticated, handleSignOut }) {
   return (
     <nav>
       <ul>
@@ -12,6 +12,9 @@ function PageNav() {
         </li>
         <li>
           <NavLink to="/SignIn">Sign in</NavLink>
+        </li>
+        <li>
+          <button onClick={handleSignOut}>Sign Out</button>
         </li>
       </ul>
     </nav>
