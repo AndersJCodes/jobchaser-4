@@ -1,5 +1,11 @@
 // @ts-nocheck
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
