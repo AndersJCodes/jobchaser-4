@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function PageNav({ isAuthenticated, handleSignOut }) {
   return (
@@ -13,9 +13,16 @@ function PageNav({ isAuthenticated, handleSignOut }) {
         <li>
           <NavLink to="/SignIn">Sign in</NavLink>
         </li>
-        <li>
-          <button onClick={handleSignOut}>Sign Out</button>
-        </li>
+        {isAuthenticated && (
+          <>
+            <li>
+              <NavLink to="/savedJobs">Saved Jobs</NavLink>
+            </li>
+            <li>
+              <button onClick={handleSignOut}>Sign Out</button>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );
