@@ -7,15 +7,16 @@ import {
   Outlet,
 } from "react-router-dom";
 import Homepage from "./pages/Homepage";
+import SavedProfiles from "./pages/SavedProfiles";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import PageNotFound from "./pages/PageNotFound";
-import PageNav from "./components/PageNav";
+//import PageNav from "./components/PageNav";
+import MainNav from "./components/MainNav";
 import { AuthContext } from "./context/AuthContext";
 import { useContext } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
-import SavedJobs from "./pages/SavedJobs";
 
 function ProtectedRoute() {
   const authContext = useContext(AuthContext);
@@ -46,7 +47,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <PageNav
+      <MainNav
         isAuthenticated={isAuthenticated}
         handleSignOut={handleSignOut}
       />
@@ -54,8 +55,8 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signIn" element={<SignIn />} />
-        <Route path="/SavedJobs" element={<ProtectedRoute />}>
-          <Route path="/SavedJobs" element={<SavedJobs />} />
+        <Route path="/SavedProfiles" element={<ProtectedRoute />}>
+          <Route path="/SavedProfiles" element={<SavedProfiles />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
