@@ -2,10 +2,9 @@ import SignInForm from "./../components/SignInForm";
 
 function SignIn() {
   return (
-    <div>
-      <h1>SignInPage</h1>
+    <main className="min-h-screen bg-gray-50 flex flex-col justify-center">
       <SignInForm />
-    </div>
+    </main>
   );
 }
 
