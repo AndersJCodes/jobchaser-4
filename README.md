@@ -1,3 +1,9 @@
+Länk till Trello:
+https://trello.com/b/2GHlzw4j/job-seeker
+
+Länk till designskiss (obsolete):
+https://www.figma.com/file/pQ0pkXtYPl7BzkjDHfJ6M9/Jobseeker?type=design&node-id=0-1&mode=design&t=npDbeVqqJ7YR3163-0
+
 # Svar på frågorna
 
 ## Del 3
