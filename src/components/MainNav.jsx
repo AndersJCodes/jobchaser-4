@@ -5,7 +5,7 @@ function MainNav({ isAuthenticated, handleSignOut }) {
   return (
     <header className="border-b border-gray-300 p-4 w-full">
       <div className="flex justify-between max-w-5xl mx-auto min-w-96 w-full">
-        <img src="../src/" />
+        <img src="../src/assets/jr-dev-icon.svg" className="mr-6" />
         <nav className="flex justify-between w-full">
           <ul className="text-base text-gray-600 flex">
             <li>
