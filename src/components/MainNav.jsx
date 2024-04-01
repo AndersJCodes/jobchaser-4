@@ -3,10 +3,10 @@ import { FaUserGroup } from "react-icons/fa6";
 
 function MainNav({ isAuthenticated, handleSignOut }) {
   return (
-    <header className="border-b border-gray-300 p-4">
-      <div className="flex items-center justify-between max-w-5xl mx-auto min-w-96">
-        <span>LiaDev</span>
-        <nav className="flex items-center justify-between w-auto">
+    <header className="border-b border-gray-300 p-4 w-full">
+      <div className="flex justify-between max-w-5xl mx-auto min-w-96 w-full">
+        <img src="../src/" />
+        <nav className="flex justify-between w-full">
           <ul className="text-base text-gray-600 flex">
             <li>
               <NavLink
