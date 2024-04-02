@@ -1,0 +1,104 @@
+{
+  "profiles": [
+    {
+      "id": 1,
+      "imgUrl": "https://randomuser.me/api/portraits/women/49.jpg",
+      "fullName": "Lorem Ipsun",
+      "Education": "Fullstack Javascript",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["HTML", "CSS", "JavaScript", "React", "node", "Github"],
+      "linkedin": "www.linkedin.com/in/jacobsonanders",
+      "github": ""
+    },
+    {
+      "id": 2,
+      "imgUrl": "https://randomuser.me/api/portraits/women/48.jpg",
+      "fullName": "Lorem Ipsum",
+      "Education": "Lorem Ipsum dolor",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["Lorem", "Ipsum", "Dolor", "React", "node", "Github"],
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "id": 3,
+      "imgUrl": "https://randomuser.me/api/portraits/women/47.jpg",
+      "fullName": "Lorem Ipsum",
+      "Education": "Lorem Ipsum dolor",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["Lorem", "Ipsum", "Dolor", "React", "node", "Github"],
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "id": 4,
+      "imgUrl": "https://randomuser.me/api/portraits/women/46.jpg",
+      "fullName": "Lorem Ipsum",
+      "Education": "Lorem Ipsum dolor",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["Lorem", "Ipsum", "Dolor", "React", "node", "Github"],
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "id": 5,
+      "imgUrl": "https://randomuser.me/api/portraits/women/45.jpg",
+      "fullName": "Lorem Ipsum",
+      "Education": "Lorem Ipsum dolor",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["Lorem", "Ipsum", "Dolor", "React", "node", "Github"],
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "id": 6,
+      "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg",
+      "fullName": "Lorem Ipsum",
+      "Education": "Lorem Ipsum dolor",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["Lorem", "Ipsum", "Dolor", "React", "node", "Github"],
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "id": 7,
+      "imgUrl": "https://randomuser.me/api/portraits/women/43.jpg",
+      "fullName": "Lorem Ipsum",
+      "Education": "Lorem Ipsum dolor",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["Lorem", "Ipsum", "Dolor", "React", "node", "Github"],
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "id": 8,
+      "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg",
+      "fullName": "Lorem Ipsum",
+      "Education": "Lorem Ipsum dolor",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["Lorem", "Ipsum", "Dolor", "React", "node", "Github"],
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "id": 9,
+      "imgUrl": "https://randomuser.me/api/portraits/women/41.jpg",
+      "fullName": "Lorem Ipsum",
+      "Education": "Lorem Ipsum dolor",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["Lorem", "Ipsum", "Dolor", "React", "node", "Github"],
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "id": 10,
+      "imgUrl": "https://randomuser.me/api/portraits/women/40.jpg",
+      "fullName": "Lorem Ipsum",
+      "Education": "Lorem Ipsum dolor",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "skills": ["Lorem", "Ipsum", "Dolor", "React", "node", "Github"],
+      "linkedin": "",
+      "github": ""
+    }
+  ]
+}

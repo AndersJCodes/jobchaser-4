@@ -1,10 +1,10 @@
-import Card from "../components/Card";
+import ProfileCard from "../components/ProfileCard";
 
-function Homepage() {
+function Homepage(data) {
   return (
     <div>
       <h1>Homepage</h1>
-      <Card />
+      <ProfileCard data={data} />
     </div>
   );
 }

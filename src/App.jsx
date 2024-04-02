@@ -14,7 +14,7 @@ import PageNotFound from "./pages/PageNotFound";
 //import PageNav from "./components/PageNav";
 import MainNav from "./components/MainNav";
 import { AuthContext } from "./context/AuthContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 
@@ -28,6 +28,27 @@ function ProtectedRoute() {
 }
 
 function App() {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const fetchProfiles = async () => {
+      try {
+        const response = await fetch("../profiles_data.json");
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch");
+        }
+        const data = await response.json();
+        /* console.log(data.profiles); */
+        setData(data.jobs);
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching data");
+      }
+    };
+    fetchProfiles();
+  }, []);
+
   const authContext = useContext(AuthContext);
   console.log("authContext: ", authContext);
 
@@ -52,7 +73,7 @@ function App() {
         handleSignOut={handleSignOut}
       />
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Homepage data={data} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/SavedProfiles" element={<ProtectedRoute />}>
