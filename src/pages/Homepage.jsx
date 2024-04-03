@@ -4,10 +4,12 @@ import HeroSearch from "../components/HeroSearch";
 function Homepage({ data }) {
   //console.log("homepage:", data);
   return (
-    <div>
-      <HeroSearch />
-      {data && <CardList data={data} />}
-    </div>
+    <main className=" bg-gray-100">
+      <div className="max-w-7xl mx-auto">
+        <HeroSearch />
+        {data && <CardList data={data} />}
+      </div>
+    </main>
   );
 }
 

@@ -3,7 +3,7 @@ import ProfileCard from "./ProfileCard";
 function CardList({ data }) {
   console.log("Cardlist:", data);
   return (
-    <div className="w-full bg-gray-100 px-10 pt-10 flex flex-wrap">
+    <div className="w-full px-10 pt-10 flex flex-wrap">
       {data.map((profile) => (
         <ProfileCard
           key={profile.id}
