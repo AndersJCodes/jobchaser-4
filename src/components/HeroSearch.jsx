@@ -8,7 +8,7 @@ function HeroSearch() {
   };
 
   return (
-    <div className="bg-[url(https://images.unsplash.com/photo-1559523182-a284c3fb7cff?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center bg-slate-400 bg-blend-multiply py-40 px-1 md:px-8 relative text-white  overflow-auto">
+    <div className="bg-[url(https://images.unsplash.com/photo-1559523182-a284c3fb7cff?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center bg-slate-400 bg-blend-multiply py-36 px-1 md:px-8 relative text-white  overflow-auto">
       <h1 className="font-bold md:text-6xl text-5xl">
         Search for LIA-developer{" "}
       </h1>
