@@ -1,10 +1,10 @@
-import ProfileCard from "../components/ProfileCard";
+import CardList from "../components/CardList";
 
-function Homepage(data) {
+function Homepage({ data }) {
   return (
     <div>
       <h1>Homepage</h1>
-      <ProfileCard data={data} />
+      <CardList data={data} />
     </div>
   );
 }

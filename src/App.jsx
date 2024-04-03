@@ -33,15 +33,14 @@ function App() {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const response = await fetch("../profiles_data.json");
+        const response = await fetch("./profiles_data.json");
 
         if (!response.ok) {
           throw new Error("Failed to fetch");
         }
         const data = await response.json();
-        /* console.log(data.profiles); */
-        setData(data.jobs);
-        console.log(data);
+        console.log(data.profiles);
+        setData(data.profiles);
       } catch (error) {
         console.error("Error fetching data");
       }
