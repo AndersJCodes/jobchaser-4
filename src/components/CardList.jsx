@@ -1,15 +1,23 @@
 import ProfileCard from "./ProfileCard";
 
 function CardList({ data }) {
-  //console.log(.id);
-
+  console.log("Cardlist:", data);
   return (
-    <div></div>
-    /*     <div className="w-full h-screen bg-gray-100 px-10 pt-10 flex flex-wrap">
-      {data.map((profile) => {
-        <ProfileCard profile={profile} key={profile.id} />;
-      })}
-    </div> */
+    <div className="w-full bg-gray-100 px-10 pt-10 flex flex-wrap">
+      {data.map((profile) => (
+        <ProfileCard
+          key={profile.id}
+          id={profile.id}
+          imgUrl={profile.imgUrl}
+          fullName={profile.fullName}
+          education={profile.education}
+          description={profile.description}
+          skills={profile.skills}
+          linkedin={profile.linkedin}
+          github={profile.github}
+        />
+      ))}
+    </div>
   );
 }
 

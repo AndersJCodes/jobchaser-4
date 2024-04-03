@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "imgUrl": "https://randomuser.me/api/portraits/women/48.jpg",
+      "imgUrl": "https://randomuser.me/api/portraits/men/48.jpg",
       "fullName": "Lorem Ipsum",
       "education": "Lorem Ipsum dolor",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "imgUrl": "https://randomuser.me/api/portraits/women/45.jpg",
+      "imgUrl": "https://randomuser.me/api/portraits/men/45.jpg",
       "fullName": "Lorem Ipsum",
       "education": "Lorem Ipsum dolor",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -52,7 +52,7 @@
     },
     {
       "id": 6,
-      "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg",
+      "imgUrl": "https://randomuser.me/api/portraits/men/44.jpg",
       "fullName": "Lorem Ipsum",
       "education": "Lorem Ipsum dolor",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -82,7 +82,7 @@
     },
     {
       "id": 9,
-      "imgUrl": "https://randomuser.me/api/portraits/women/41.jpg",
+      "imgUrl": "https://randomuser.me/api/portraits/men/41.jpg",
       "fullName": "Lorem Ipsum",
       "education": "Lorem Ipsum dolor",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",

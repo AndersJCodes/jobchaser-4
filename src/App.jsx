@@ -22,7 +22,7 @@ function ProtectedRoute() {
   const authContext = useContext(AuthContext);
 
   const isAuthenticated = authContext && authContext.user !== null;
-  console.log("isAuthenticated", isAuthenticated);
+  //console.log("isAuthenticated", isAuthenticated);
 
   return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
 }
@@ -33,13 +33,13 @@ function App() {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const response = await fetch("./profiles_data.json");
+        const response = await fetch("./src/profiles_data.json");
 
         if (!response.ok) {
           throw new Error("Failed to fetch");
         }
         const data = await response.json();
-        console.log(data.profiles);
+        //console.log(data.profiles);
         setData(data.profiles);
       } catch (error) {
         console.error("Error fetching data");
@@ -49,10 +49,10 @@ function App() {
   }, []);
 
   const authContext = useContext(AuthContext);
-  console.log("authContext: ", authContext);
+  //console.log("authContext: ", authContext);
 
   const isAuthenticated = authContext && authContext.user !== null;
-  console.log("isAuthenticated", isAuthenticated);
+  //console.log("isAuthenticated", isAuthenticated);
 
   const handleSignOut = () => {
     signOut(auth)

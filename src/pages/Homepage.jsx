@@ -1,10 +1,12 @@
 import CardList from "../components/CardList";
+import HeroSearch from "../components/HeroSearch";
 
 function Homepage({ data }) {
+  //console.log("homepage:", data);
   return (
     <div>
-      <h1>Homepage</h1>
-      <CardList data={data} />
+      <HeroSearch />
+      {data && <CardList data={data} />}
     </div>
   );
 }
