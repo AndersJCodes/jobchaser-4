@@ -58,6 +58,7 @@ function App() {
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
+    console.log(searchTerm);
   };
 
   const handleSearchedProfiles =
@@ -70,10 +71,7 @@ function App() {
           .join("")
           .toLowerCase()
           .includes(searchTerm.toLowerCase()) ||
-        profile.description
-          .join(" ")
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase())
+        profile.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
   /* -------------- Handle sign in ----------------------- */

@@ -6,7 +6,7 @@ function Homepage({ onSearch, SearchTerm, onSearchedProfiles }) {
   return (
     <main className=" bg-gray-100">
       <div className="max-w-7xl mx-auto">
-        <HeroSearch onsearch={onSearch} searchTerm={SearchTerm} />
+        <HeroSearch onSearch={onSearch} searchTerm={SearchTerm} />
         {onSearchedProfiles && (
           <CardList onSearchedProfiles={onSearchedProfiles} />
         )}
