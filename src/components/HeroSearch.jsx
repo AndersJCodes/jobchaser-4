@@ -1,16 +1,8 @@
-import { useState } from "react";
-
-function HeroSearch() {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
+function HeroSearch({ searchTerm, onSearch }) {
   return (
     <div className="bg-[url(https://images.unsplash.com/photo-1559523182-a284c3fb7cff?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center bg-slate-400 bg-blend-multiply py-36 px-1 md:px-8 relative text-white  overflow-auto">
       <h1 className="font-bold md:text-6xl text-5xl">
-        Search for LIA-developer{" "}
+        Search for LIA-developer
       </h1>
       <p className="py-4 w-11/12 md:text-2xl text-xl font-light md:w-3/4 xl:w-2/4">
         If you are looking for a junior developer to help you, for free, and for
@@ -22,7 +14,7 @@ function HeroSearch() {
           <input
             type="text"
             value={searchTerm}
-            onChange={handleInputChange}
+            onChange={onSearch}
             placeholder="input search term"
             className="mt-2 shadow-md focus:outline-none rounded py-3 px-6 block w-full"
           />

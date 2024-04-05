@@ -18,6 +18,8 @@ import { useContext, useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 
+/* -------------- useContext ----------------------- */
+
 function ProtectedRoute() {
   const authContext = useContext(AuthContext);
 
@@ -27,9 +29,13 @@ function ProtectedRoute() {
   return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
 }
 
+/* -------------- App component ----------------------- */
+
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState();
 
+  /* -------------- Fetch ----------------------- */
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
@@ -48,6 +54,29 @@ function App() {
     fetchProfiles();
   }, []);
 
+  /* -------------- Search ----------------------- */
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSearchedProfiles = d;
+  data.filter(
+    (profile) =>
+      profile.fullname.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      profile.education.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      profile.skills
+        .join("")
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase()) ||
+      profile.description
+        .join(" ")
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
+  );
+
+  /* -------------- Handle sign in ----------------------- */
+
   const authContext = useContext(AuthContext);
   //console.log("authContext: ", authContext);
 
@@ -65,6 +94,8 @@ function App() {
       });
   };
 
+  /* -------------- Component rendering ----------------------- */
+
   return (
     <BrowserRouter>
       <MainNav
@@ -72,7 +103,17 @@ function App() {
         handleSignOut={handleSignOut}
       />
       <Routes>
-        <Route path="/" element={<Homepage data={data} />} />
+        <Route
+          path="/"
+          element={
+            <Homepage
+              data={data}
+              searchTerm={searchTerm}
+              onSearch={handleSearch}
+              onSearchedProfiles={handleSearchedProfiles}
+            />
+          }
+        />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/SavedProfiles" element={<ProtectedRoute />}>
