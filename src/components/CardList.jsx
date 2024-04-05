@@ -1,7 +1,7 @@
 import ProfileCard from "./ProfileCard";
 
-function CardList({ data, onSearchedProfiles }) {
-  console.log("Cardlist:", data);
+function CardList({ onSearchedProfiles }) {
+  console.log("Cardlist:", onSearchedProfiles);
   return (
     <div className="w-full px-10 pt-10 flex flex-wrap">
       {onSearchedProfiles.map((profile) => (

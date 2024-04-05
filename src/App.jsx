@@ -60,20 +60,21 @@ function App() {
     setSearchTerm(e.target.value);
   };
 
-  const handleSearchedProfiles = d;
-  data.filter(
-    (profile) =>
-      profile.fullname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      profile.education.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      profile.skills
-        .join("")
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase()) ||
-      profile.description
-        .join(" ")
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase())
-  );
+  const handleSearchedProfiles =
+    data &&
+    data.filter(
+      (profile) =>
+        profile.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        profile.education.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        profile.skills
+          .join("")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase()) ||
+        profile.description
+          .join(" ")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase())
+    );
 
   /* -------------- Handle sign in ----------------------- */
 
@@ -107,7 +108,6 @@ function App() {
           path="/"
           element={
             <Homepage
-              data={data}
               searchTerm={searchTerm}
               onSearch={handleSearch}
               onSearchedProfiles={handleSearchedProfiles}
