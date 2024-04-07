@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { IconContext } from "react-icons";
 import {
   TiSocialGithubCircular,
   TiSocialLinkedinCircular,
+  TiStarFullOutline,
+  TiStarOutline,
 } from "react-icons/ti";
 
 export default function ProfileCard({
@@ -14,10 +17,29 @@ export default function ProfileCard({
   linkedin,
   github,
 }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <>
       <div className="relative mb-32 max-w-sm mx-auto mt-16">
         <div className="rounded overflow-hidden shadow-md bg-white">
+          {isFavorite ? (
+            <IconContext.Provider value={{ size: "1.6em", color: "#e64a19" }}>
+              <div className="absolute top-4 right-4 z-10 cursor-pointer">
+                <TiStarFullOutline onClick={toggleFavorite} />
+              </div>
+            </IconContext.Provider>
+          ) : (
+            <IconContext.Provider value={{ size: "1.6em", color: "#e64a19" }}>
+              <div className="absolute top-4 right-4 z-10 cursor-pointer">
+                <TiStarOutline onClick={toggleFavorite} />
+              </div>
+            </IconContext.Provider>
+          )}
           <div className="absolute -mt-20 w-full flex justify-left pl-4">
             <div className="h-32 w-32">
               <img
