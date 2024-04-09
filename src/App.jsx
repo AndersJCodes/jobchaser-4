@@ -32,8 +32,13 @@ function ProtectedRoute() {
 /* -------------- App component ----------------------- */
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
+  /* fetch states */
   const [data, setData] = useState();
+
+  /* Searchstates */
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("");
+  const [selectedEducation, setSelectedEducation] = useState("");
 
   /* -------------- Fetch ----------------------- */
   useEffect(() => {
@@ -61,6 +66,41 @@ function App() {
     console.log(searchTerm);
   };
 
+  const handleLocationChange = (event) => {
+    setSelectedLocation(event.target.value);
+  };
+
+  useEffect(() => {
+    console.log("Selected Location:", selectedLocation);
+  }, [selectedLocation]);
+
+  const handleEducationChange = (event) => {
+    setSelectedEducation(event.target.value);
+  };
+
+  const handleSearchedProfiles =
+    data &&
+    data.filter((profile) => {
+      console.log("Profile:", profile.location);
+      console.log("Selected Location:", selectedLocation);
+
+      const searchTermLower = searchTerm.toLowerCase().trim();
+      const locationLower = selectedLocation.toLowerCase().trim();
+      const educationLower = selectedEducation.toLowerCase().trim();
+
+      return (
+        profile.fullName.toLowerCase().includes(searchTermLower) ||
+        profile.education.toLowerCase().includes(searchTermLower) ||
+        profile.skills.join("").toLowerCase().includes(searchTermLower) ||
+        profile.description.toLowerCase().includes(searchTermLower) ||
+        (selectedLocation &&
+          profile.location.trim().toLowerCase().includes(locationLower)) ||
+        (selectedEducation &&
+          profile.education.trim().toLowerCase().includes(educationLower))
+      );
+    });
+
+  /* 
   const handleSearchedProfiles =
     data &&
     data.filter(
@@ -73,6 +113,30 @@ function App() {
           .includes(searchTerm.toLowerCase()) ||
         profile.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
+ */
+  /* -------------- Handle location and education option list ----------------------- */
+
+  const locationOptions =
+    handleSearchedProfiles &&
+    Array.from(
+      new Set(handleSearchedProfiles.map((option) => option.location))
+    ).map((location) => (
+      <option key={location} value={location}>
+        {location}
+      </option>
+    ));
+
+  /* Category search by education  */
+
+  const educationOptions =
+    handleSearchedProfiles &&
+    Array.from(
+      new Set(handleSearchedProfiles.map((option) => option.education))
+    ).map((education) => (
+      <option key={education} value={education}>
+        {education}
+      </option>
+    ));
 
   /* -------------- Handle sign in ----------------------- */
 
@@ -109,6 +173,10 @@ function App() {
               searchTerm={searchTerm}
               onSearch={handleSearch}
               onSearchedProfiles={handleSearchedProfiles}
+              locationOptions={locationOptions}
+              educationOptions={educationOptions}
+              onEducationChange={handleEducationChange}
+              onLocationChange={handleLocationChange}
             />
           }
         />

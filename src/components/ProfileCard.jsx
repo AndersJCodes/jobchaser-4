@@ -12,6 +12,7 @@ export default function ProfileCard({
   imgUrl,
   fullName,
   education,
+  location,
   description,
   skills,
   linkedin,
@@ -50,7 +51,10 @@ export default function ProfileCard({
           </div>
           <div className="px-6 mt-16">
             <h1 className="font-bold text-3xl mb-1">{fullName}</h1>
-            <p className="text-gray-800 text-sm">{education}</p>
+            <p className="text-gray-800 text-sm">
+              {education}
+              <p className="text-gray-800 text-sm">{location}</p>
+            </p>
             <p className=" text-gray-600 text-base pt-3 font-normal">
               {description}
             </p>

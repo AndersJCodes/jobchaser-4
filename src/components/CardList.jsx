@@ -1,7 +1,6 @@
 import ProfileCard from "./ProfileCard";
 
 function CardList({ onSearchedProfiles }) {
-  console.log("Cardlist:", onSearchedProfiles);
   return (
     <div className="w-full px-10 pt-10 flex flex-wrap">
       {onSearchedProfiles.map((profile) => (
@@ -11,6 +10,7 @@ function CardList({ onSearchedProfiles }) {
           imgUrl={profile.imgUrl}
           fullName={profile.fullName}
           education={profile.education}
+          location={profile.location}
           description={profile.description}
           skills={profile.skills}
           linkedin={profile.linkedin}

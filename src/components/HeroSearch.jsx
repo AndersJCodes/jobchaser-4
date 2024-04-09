@@ -1,4 +1,11 @@
-function HeroSearch({ searchTerm, onSearch }) {
+function HeroSearch({
+  searchTerm,
+  onSearch,
+  locationOptions,
+  educationOptions,
+  onLocationChange,
+  onEducationChange,
+}) {
   return (
     <div className="bg-[url(./assets/simon-abrams-unsplash.jpg)] bg-cover bg-center bg-slate-400 bg-blend-multiply py-36 px-1 md:px-8 relative text-white overflow-auto">
       <div className="max-w-7xl mx-auto">
@@ -20,6 +27,29 @@ function HeroSearch({ searchTerm, onSearch }) {
               className="mt-2 shadow-md focus:outline-none rounded py-3 px-6 block w-full"
             />
             <div className="text-left absolute top-10 rounded-t-none rounded-b-2xl shadow bg-white divide-y w-full max-h-40 overflow-auto"></div>
+          </div>
+          <div className="flex gap-2 py-4 text-base text-gray-800">
+            <select
+              name=""
+              id=""
+              placeholder="Location"
+              className="mt-2 shadow-md focus:outline-none rounded py-3 px-6"
+              onChange={onLocationChange}
+            >
+              <option defaultValue="">All Locations</option>
+              {locationOptions}
+            </select>
+            <select
+              name=""
+              id=""
+              className="mt-2 shadow-md focus:outline-none rounded py-3 px-6"
+              onChange={onEducationChange}
+            >
+              <option className="text-gray-300" defaultValue="">
+                All educations
+              </option>
+              {educationOptions}
+            </select>
           </div>
         </div>
       </div>
