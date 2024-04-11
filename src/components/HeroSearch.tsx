@@ -1,3 +1,5 @@
+import {} from "../types/types";
+
 function HeroSearch({
   searchTerm,
   onSearch,

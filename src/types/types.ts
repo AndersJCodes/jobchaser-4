@@ -12,6 +12,6 @@ export type Profile = {
   github: string;
 };
 
-export type OnSearchedProfiles {
+export type OnSearchedProfiles = {
   onSearchedProfiles: Profile[]; // Define onSearchedProfiles as an array of Profile
-}
+};
