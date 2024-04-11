@@ -80,29 +80,6 @@ function App() {
 
   const handleSearchedProfiles =
     data &&
-    data.filter((profile) => {
-      console.log("Profile:", profile.location);
-      console.log("Selected Location:", selectedLocation);
-
-      const searchTermLower = searchTerm.toLowerCase().trim();
-      const locationLower = selectedLocation.toLowerCase().trim();
-      const educationLower = selectedEducation.toLowerCase().trim();
-
-      return (
-        profile.fullName.toLowerCase().includes(searchTermLower) ||
-        profile.education.toLowerCase().includes(searchTermLower) ||
-        profile.skills.join("").toLowerCase().includes(searchTermLower) ||
-        profile.description.toLowerCase().includes(searchTermLower) ||
-        (selectedLocation &&
-          profile.location.trim().toLowerCase().includes(locationLower)) ||
-        (selectedEducation &&
-          profile.education.trim().toLowerCase().includes(educationLower))
-      );
-    });
-
-  /* 
-  const handleSearchedProfiles =
-    data &&
     data.filter(
       (profile) =>
         profile.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -113,7 +90,7 @@ function App() {
           .includes(searchTerm.toLowerCase()) ||
         profile.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
- */
+
   /* -------------- Handle location and education option list ----------------------- */
 
   const locationOptions =
