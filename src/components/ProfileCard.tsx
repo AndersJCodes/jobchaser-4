@@ -6,6 +6,7 @@ import {
   TiStarFullOutline,
   TiStarOutline,
 } from "react-icons/ti";
+import { Profile } from "../types/types";
 
 export default function ProfileCard({
   id,
@@ -17,7 +18,7 @@ export default function ProfileCard({
   skills,
   linkedin,
   github,
-}) {
+}: Profile) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const toggleFavorite = () => {
