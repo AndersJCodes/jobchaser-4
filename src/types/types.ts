@@ -13,16 +13,35 @@ export type Profile = {
 };
 
 export type FilteredProfiles = {
-  filteredProfiles: Profile[]; // Define onSearchedProfiles as an array of Profile
+  filteredProfiles: Profile[];
 };
 
-// Options used in dropdowns or similar components
 export interface Option {
   value: string;
   label: string;
 }
 
-// Context or component-specific types
+export interface MainNavProps {
+  isAuthenticated: boolean;
+  handleSignOut: () => void;
+}
+
+/* export interface HomePageProps {
+  onSearch: () => void;
+  searchTerm: string;
+  filteredProfiles: Profile[]; // Assuming Profile is a defined type somewhere in your project
+  locationOptions: string[];
+  educationOptions: string[];
+  onLocationChange: () => void;
+  onEducationChange: () => void;
+} */
+
+export interface FormInput {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
 export interface AuthProviderProps {
   children: ReactNode;
 }
@@ -30,16 +49,5 @@ export interface AuthProviderProps {
 export interface User {
   uid: string;
   email: string | null;
-  // Add additional user fields as required
-}
-
-// Props for components that need to be strongly typed
-export interface HomepageProps {
-  searchTerm: string;
-  onSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  filteredProfiles: Profile[];
-  locationOptions: Option[];
-  educationOptions: Option[];
-  onLocationChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  onEducationChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  user: boolean;
 }

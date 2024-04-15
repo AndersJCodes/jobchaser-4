@@ -1,13 +1,13 @@
-import { ChangeEvent, SelectHTMLAttributes } from "react";
+import { ReactElement, ChangeEvent, SelectHTMLAttributes } from "react";
 import {} from "../types/types";
 
 type HeroSearchProps = {
   searchTerm: string;
-  onSearch: () => void;
+  onSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
   locationOptions?: string[] | undefined; // Optional array of strings for location options
   educationOptions?: string[]; // Optional array of strings for education options
-  onLocationChange: SelectHTMLAttributes<HTMLSelectElement>["onChange"];
-  onEducationChange: SelectHTMLAttributes<HTMLSelectElement>["onChange"];
+  onLocationChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onEducationChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
 function HeroSearch({

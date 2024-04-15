@@ -1,7 +1,12 @@
 import { NavLink, Link } from "react-router-dom";
 import { FaUserGroup } from "react-icons/fa6";
 
-function MainNav({ isAuthenticated, handleSignOut }) {
+interface MainNavProps {
+  isAuthenticated: boolean;
+  handleSignOut: () => void; // Assuming handleSignOut doesn't take any arguments
+}
+
+function MainNav({ isAuthenticated, handleSignOut }: MainNavProps) {
   return (
     <header className="border-b border-gray-300 p-4 w-full">
       <div className="flex justify-between max-w-7xl mx-auto min-w-96 w-full">

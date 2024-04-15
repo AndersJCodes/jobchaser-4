@@ -11,18 +11,18 @@ import SavedProfiles from "./pages/SavedProfiles";
 import PageNotFound from "./pages/PageNotFound";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, User, signOut } from "firebase/auth";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { auth } from "./firebase-config";
-import { Profile, Option } from "./types/types";
+import { Profile } from "./types/types";
 
 /* -------------- useContext ----------------------- */
 
 function ProtectedRoute() {
-  const authContext = useContext(AuthContext);
-
-  const isAuthenticated = authContext && authContext.user !== null;
+  const user = useContext<User | undefined>(AuthContext);
+  //const isAuthenticated = authContext && authContext.user !== null;
+  const isAuthenticated = !!user;
   //console.log("isAuthenticated", isAuthenticated);
 
   return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
@@ -32,15 +32,15 @@ function ProtectedRoute() {
 
 function App() {
   /* fetch states */
-  const [data, setData] = useState<Profile>();
+  const [data, setData] = useState<Profile[]>([]);
 
   /* Searchstates */
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState("");
-  const [selectedEducation, setSelectedEducation] = useState("");
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [selectedLocation, setSelectedLocation] = useState<string>("");
+  const [selectedEducation, setSelectedEducation] = useState<string>("");
 
-  const authContext = useContext(AuthContext);
-  const isAuthenticated = authContext && authContext.user !== null;
+  const user = useContext(AuthContext);
+  const isAuthenticated = !!user;
   //console.log("authContext: ", authContext);
   //console.log("isAuthenticated", isAuthenticated);
 
@@ -72,16 +72,20 @@ function App() {
 
   /* -------------- Search ----------------------- */
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
     console.log(searchTerm);
   };
 
-  const handleLocationChange = (event) => {
+  const handleLocationChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ): void => {
     setSelectedLocation(event.target.value);
   };
 
-  const handleEducationChange = (event) => {
+  const handleEducationChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setSelectedEducation(event.target.value);
   };
 

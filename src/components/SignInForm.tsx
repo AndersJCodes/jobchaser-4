@@ -1,7 +1,8 @@
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./../firebase-config";
+import { auth } from "../firebase-config";
+import { FormInput } from "../types/types";
 
 function SignInForm() {
   const navigate = useNavigate();
@@ -10,9 +11,9 @@ function SignInForm() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormInput>();
 
-  const formSubmit = (data) => {
+  const formSubmit: SubmitHandler<FormInput> = (data) => {
     console.log("Form Submitted: ", data);
     const { email, password } = data;
 
@@ -92,7 +93,7 @@ function SignInForm() {
           </button>
           <button
             className="w-full bg-white hover:bg-gray-100 text-gray-500 font-medium py-2 px-4 border rounded mt-4"
-            type=""
+            type="submit"
           >
             Forgott password?
           </button>

@@ -4,8 +4,6 @@ import { Profile, FilteredProfiles } from "../types/types";
 function CardList({ filteredProfiles }: FilteredProfiles) {
   if (!filteredProfiles) return;
 
-  console.log(filteredProfiles);
-
   return (
     <div className="w-full px-10 pt-10 flex flex-wrap">
       {filteredProfiles.map((profile: Profile) => (
