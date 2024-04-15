@@ -1,4 +1,14 @@
+import { ChangeEvent, SelectHTMLAttributes } from "react";
 import {} from "../types/types";
+
+type HeroSearchProps = {
+  searchTerm: string;
+  onSearch: () => void;
+  locationOptions?: string[] | undefined; // Optional array of strings for location options
+  educationOptions?: string[]; // Optional array of strings for education options
+  onLocationChange: SelectHTMLAttributes<HTMLSelectElement>["onChange"];
+  onEducationChange: SelectHTMLAttributes<HTMLSelectElement>["onChange"];
+};
 
 function HeroSearch({
   searchTerm,
@@ -7,7 +17,7 @@ function HeroSearch({
   educationOptions,
   onLocationChange,
   onEducationChange,
-}) {
+}: HeroSearchProps) {
   return (
     <div className="bg-[url(./assets/simon-abrams-unsplash.jpg)] bg-cover bg-center bg-slate-400 bg-blend-multiply py-36 px-1 md:px-8 relative text-white overflow-auto">
       <div className="max-w-7xl mx-auto">
@@ -34,12 +44,16 @@ function HeroSearch({
             <select
               name=""
               id=""
-              placeholder="Location"
               className="mt-2 shadow-md focus:outline-none rounded py-3 px-6"
               onChange={onLocationChange}
             >
-              <option defaultValue="">All Locations</option>
-              {locationOptions}
+              <option value="">All Locations</option>
+              {locationOptions &&
+                locationOptions.map((option, index) => (
+                  <option className="text-gray-300" key={index} value={option}>
+                    {option}
+                  </option>
+                ))}
             </select>
             <select
               name=""
@@ -47,10 +61,13 @@ function HeroSearch({
               className="mt-2 shadow-md focus:outline-none rounded py-3 px-6"
               onChange={onEducationChange}
             >
-              <option className="text-gray-300" defaultValue="">
-                All educations
-              </option>
-              {educationOptions}
+              <option value="">All Educations</option>
+              {educationOptions &&
+                educationOptions.map((option, index) => (
+                  <option className="text-gray-300" key={index} value={option}>
+                    {option}
+                  </option>
+                ))}
             </select>
           </div>
         </div>

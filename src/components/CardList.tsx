@@ -1,10 +1,14 @@
 import ProfileCard from "./ProfileCard";
-import { Profile, OnSearchedProfiles } from "../types/types";
+import { Profile, FilteredProfiles } from "../types/types";
 
-function CardList({ onSearchedProfiles }: OnSearchedProfiles) {
+function CardList({ filteredProfiles }: FilteredProfiles) {
+  if (!filteredProfiles) return;
+
+  console.log(filteredProfiles);
+
   return (
     <div className="w-full px-10 pt-10 flex flex-wrap">
-      {onSearchedProfiles.map((profile: Profile) => (
+      {filteredProfiles.map((profile: Profile) => (
         <ProfileCard
           key={profile.id}
           id={profile.id}

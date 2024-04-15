@@ -1,22 +1,21 @@
-// @ts-nocheck
 import {
   BrowserRouter,
-  Routes,
-  Route,
   Navigate,
   Outlet,
+  Routes,
+  Route,
 } from "react-router-dom";
 import Homepage from "./pages/Homepage";
-import SavedProfiles from "./pages/SavedProfiles";
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
-import PageNotFound from "./pages/PageNotFound";
-//import PageNav from "./components/PageNav";
 import MainNav from "./components/MainNav";
-import { AuthContext } from "./context/AuthContext";
-import { useContext, useEffect, useState } from "react";
+import SavedProfiles from "./pages/SavedProfiles";
+import PageNotFound from "./pages/PageNotFound";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import { signOut } from "firebase/auth";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "./context/AuthContext";
 import { auth } from "./firebase-config";
+import { Profile, Option } from "./types/types";
 
 /* -------------- useContext ----------------------- */
 
@@ -33,12 +32,24 @@ function ProtectedRoute() {
 
 function App() {
   /* fetch states */
-  const [data, setData] = useState();
+  const [data, setData] = useState<Profile>();
 
   /* Searchstates */
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedEducation, setSelectedEducation] = useState("");
+
+  const authContext = useContext(AuthContext);
+  const isAuthenticated = authContext && authContext.user !== null;
+  //console.log("authContext: ", authContext);
+  //console.log("isAuthenticated", isAuthenticated);
+
+  const locationOptions = data && [
+    ...new Set(data.map((profile) => profile.location)),
+  ];
+  const educationOptions = data && [
+    ...new Set(data.map((profile) => profile.education)),
+  ];
 
   /* -------------- Fetch ----------------------- */
   useEffect(() => {
@@ -70,15 +81,11 @@ function App() {
     setSelectedLocation(event.target.value);
   };
 
-  useEffect(() => {
-    console.log("Selected Location:", selectedLocation);
-  }, [selectedLocation]);
-
   const handleEducationChange = (event) => {
     setSelectedEducation(event.target.value);
   };
 
-  const handleSearchedProfiles =
+  const filteredProfiles =
     data &&
     data.filter(
       (profile) =>
@@ -91,37 +98,7 @@ function App() {
         profile.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-  /* -------------- Handle location and education option list ----------------------- */
-
-  const locationOptions =
-    handleSearchedProfiles &&
-    Array.from(
-      new Set(handleSearchedProfiles.map((option) => option.location))
-    ).map((location) => (
-      <option key={location} value={location}>
-        {location}
-      </option>
-    ));
-
-  /* Category search by education  */
-
-  const educationOptions =
-    handleSearchedProfiles &&
-    Array.from(
-      new Set(handleSearchedProfiles.map((option) => option.education))
-    ).map((education) => (
-      <option key={education} value={education}>
-        {education}
-      </option>
-    ));
-
   /* -------------- Handle sign in ----------------------- */
-
-  const authContext = useContext(AuthContext);
-  //console.log("authContext: ", authContext);
-
-  const isAuthenticated = authContext && authContext.user !== null;
-  //console.log("isAuthenticated", isAuthenticated);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -149,7 +126,7 @@ function App() {
             <Homepage
               searchTerm={searchTerm}
               onSearch={handleSearch}
-              onSearchedProfiles={handleSearchedProfiles}
+              filteredProfiles={filteredProfiles}
               locationOptions={locationOptions}
               educationOptions={educationOptions}
               onEducationChange={handleEducationChange}

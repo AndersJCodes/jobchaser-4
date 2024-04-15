@@ -4,7 +4,7 @@ import HeroSearch from "../components/HeroSearch";
 function Homepage({
   onSearch,
   SearchTerm,
-  onSearchedProfiles,
+  filteredProfiles,
   locationOptions,
   educationOptions,
   onLocationChange,
@@ -22,9 +22,7 @@ function Homepage({
         onLocationChange={onLocationChange}
       />
       <div className="max-w-7xl mx-auto">
-        {onSearchedProfiles && (
-          <CardList onSearchedProfiles={onSearchedProfiles} />
-        )}
+        {filteredProfiles && <CardList filteredProfiles={filteredProfiles} />}
       </div>
     </main>
   );
