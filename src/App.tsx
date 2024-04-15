@@ -89,7 +89,34 @@ function App() {
     setSelectedEducation(event.target.value);
   };
 
-  const filteredProfiles =
+  const filteredProfiles = data.filter((profile) => {
+    // Normalize search term and ensure it's lowercased
+    const normalizedSearchTerm = searchTerm.toLowerCase();
+
+    // Check if the profile matches the normalized search term in any of the relevant fields
+    const matchesSearchTerm = normalizedSearchTerm
+      ? profile.fullName.toLowerCase().includes(normalizedSearchTerm) ||
+        profile.education.toLowerCase().includes(normalizedSearchTerm) ||
+        profile.skills.some((skill) =>
+          skill.toLowerCase().includes(normalizedSearchTerm)
+        ) ||
+        profile.description.toLowerCase().includes(normalizedSearchTerm)
+      : true; // If no search term is provided, do not filter out based on it
+
+    // Check if profile matches the selected location (if a location has been selected)
+    const matchesLocation = selectedLocation
+      ? profile.location === selectedLocation
+      : true;
+
+    // Check if profile matches the selected education (if an education has been selected)
+    const matchesEducation = selectedEducation
+      ? profile.education === selectedEducation
+      : true;
+
+    return matchesSearchTerm && matchesLocation && matchesEducation;
+  });
+
+  /*   const filteredProfiles =
     data &&
     data.filter(
       (profile) =>
@@ -100,7 +127,7 @@ function App() {
           .toLowerCase()
           .includes(searchTerm.toLowerCase()) ||
         profile.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    ); */
 
   /* -------------- Handle sign in ----------------------- */
 

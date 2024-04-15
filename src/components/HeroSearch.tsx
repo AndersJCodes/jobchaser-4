@@ -4,8 +4,8 @@ import {} from "../types/types";
 type HeroSearchProps = {
   searchTerm: string;
   onSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  locationOptions?: string[] | undefined; // Optional array of strings for location options
-  educationOptions?: string[]; // Optional array of strings for education options
+  locationOptions?: string[] | undefined;
+  educationOptions?: string[];
   onLocationChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   onEducationChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };
@@ -19,7 +19,7 @@ function HeroSearch({
   onEducationChange,
 }: HeroSearchProps) {
   return (
-    <div className="bg-[url(./assets/simon-abrams-unsplash.jpg)] bg-cover bg-center bg-slate-400 bg-blend-multiply py-36 px-1 md:px-8 relative text-white overflow-auto">
+    <div className="bg-[url(./assets/simon-abrams-unsplash.jpg)] bg-cover bg-center bg-slate-400 bg-blend-multiply py-24 px-1 md:px-8 relative text-white overflow-auto">
       <div className="max-w-7xl mx-auto">
         <h1 className="font-bold md:text-6xl text-5xl">
           Search for LIA-developer
