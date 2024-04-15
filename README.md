@@ -6,6 +6,28 @@ https://www.figma.com/file/pQ0pkXtYPl7BzkjDHfJ6M9/Jobseeker?type=design&node-id=
 
 # Svar på frågorna
 
+## Del 4
+
+### Vad är Redux Toolkit?
+
+Redux toolkit är ett javascript bibliotek som hjälper oss att hålla koll på vår applikations olika state och hur de förändras över tid. Med redux toolkit kan vi samla flera av våra state och också hantera mer komplexa state på ett ställe.
+
+Det gör vår kod mer komplicerad på ett sätt, men om vi har mer komplicerade state, som ett object med många ketvalue pairs kan det vara ett bättre och mer effektivt sätt att hantera state på.
+
+### När, i vilka situationer vill man använda Redux Toolkit?
+
+Om vi har en stor applikation med många state och komplicerade state kan redux toolkit vara till hjälp. Särskilt då de hanteras av flera komponenter. Om vi har många states som används i flera komponenter kan det annars bli så att vi tappar kontrollen.
+
+### Beskriv typiska områden hur man använder Typescript i React? (ex props, event, useReducer, etc)
+
+Typescript hjälper oss att fånga fel genom att vi typar våra props, event och våra reducers. På så sätt vet programmet om vad för typ av värden våra primitiva och komplexa datatyper har.
+
+För props kan vi bestämma om det till eempel ska ta en boolean eller en string. Det kan också vara en så kallad union som tar flera.
+
+För våra event kan vi använda typer för att bestämma typ av event. Om det är en formulärinmatning eller ett tangenttryck.
+
+För våra reducers hjälper det oss att hålla reda på olika typer av state och olika typer av actions. En räkanre kanske kan ta en ökning och en miskning och inget mer. Då kan vi typa att det är de två typerna av actions som den tar.
+
 ## Del 3
 
 ### Vad menas med Reacts ekosystem?
